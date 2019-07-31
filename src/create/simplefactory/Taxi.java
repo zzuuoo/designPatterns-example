@@ -1,4 +1,4 @@
-package create.factory;
+package create.simplefactory;
 
 /**
  * @author zuoweixing@guazi.com
