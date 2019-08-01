@@ -5,7 +5,7 @@ package create.simplefactory;
  * @date 2019-07-25 10:59
  */
 public class CarFactory {
-	public  Car createCar(String carName){
+	public  static Car createCar(String carName){
 		Car car = null;
 		switch (carName){
 			case "Jeep":

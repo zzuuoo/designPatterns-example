@@ -6,19 +6,34 @@ package create.singleton;
  * @date 2019-07-31 15:16
  */
 public class Singleton {
-	private static final Singleton singleton = new Singleton();
 
 	/**
-	 * 禁止通过new Sinleton()实例化
+	 * 使用volatile关键字保其可见性
 	 */
+	volatile private static Singleton instance = null;
+
 	private Singleton() {
 	}
 
 	public static Singleton getInstance() {
-		return singleton;
-	}
+		try {
+			//懒汉式
+			if (instance != null) {
 
-	public void doSomething() {
-		System.out.println("doing something ...");
+			} else {
+				//创建实例之前可能会有一些准备性的耗时工作
+				Thread.sleep(300);
+				synchronized (Singleton.class) {
+					//二次检查
+					if (instance == null) {
+						instance = new Singleton();
+					}
+				}
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		return instance;
+
 	}
 }

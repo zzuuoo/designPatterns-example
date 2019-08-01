@@ -8,12 +8,11 @@ import java.util.Scanner;
  */
 public class Client {
 	public static void main(String[] args) {
-		CarFactory carFactory = new CarFactory();
 		Scanner scanner = new Scanner(System.in);
 		while (true) {
 			System.out.println("请输入你要生产的车名：");
 			String name = scanner.next();
-			Car car = carFactory.createCar(name);
+			Car car = CarFactory.createCar(name);
 			if (null != car) {
 				car.run();
 			}
