@@ -8,6 +8,6 @@ public interface Car {
 	/**
 	 * run
 	 */
-	public void run();
+	void run();
 
 }
