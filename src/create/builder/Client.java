@@ -30,24 +30,24 @@ public class Client {
 
 	public static void main(String[] args) {
 
-		Hero mage =
+		Hero java =
 				new Hero.Builder(Profession.JAVA_ENGINEER, "抓蛙").withHairColor(HairColor.BLACK)
 						.withArmor(Armor.PLAID_SHIRT)
 						.withWeapon(Weapon.KEYBOARD).build();
 
 
-		System.out.println(mage.toString());
-		Hero warrior =
+		System.out.println(java.toString());
+		Hero go =
 				new Hero.Builder(Profession.GO_ENGINEER, "小垢").withHairColor(HairColor.BLOND)
 						.withHairType(HairType.LONG).withArmor(Armor.VEST).withWeapon(Weapon.MONITOR)
 						.build();
 
-		System.out.println(warrior.toString());
+		System.out.println(go.toString());
 
-		Hero thief =
+		Hero php =
 				new Hero.Builder(Profession.PHP_ENGINEER, "小匹").withHairType(HairType.BALD)
 						.withWeapon(Weapon.MONITOR).build();
-		System.out.println(thief.toString());
+		System.out.println(php.toString());
 
 	}
 }
