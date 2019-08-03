@@ -20,19 +20,29 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package create.abstractfactory;
+package create.builder;
 
 /**
  * 
- * ElfKing
+ * Weapon enumeration
  *
  */
-public class ElfKing implements King {
+public enum Weapon {
 
-  static final String DESCRIPTION = "This is the Elven king!";
+  /**
+   * 键盘、鼠标、显示器
+   */
+  KEYBOARD("键盘"), MOUSE("鼠标"),MONITOR("显示器");
+
+
+  private String title;
+
+  Weapon(String title) {
+    this.title = title;
+  }
 
   @Override
-  public String getDescription() {
-    return DESCRIPTION;
+  public String toString() {
+    return title;
   }
 }

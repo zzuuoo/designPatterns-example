@@ -20,19 +20,23 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package create.abstractfactory;
+package behavior.commond;
 
 /**
  * 
- * OrcKing
+ * Goblin is the target of the spells
  *
  */
-public class OrcKing implements King {
+public class Goblin extends Target {
 
-  static final String DESCRIPTION = "This is the Orc king!";
+  public Goblin() {
+    setSize(Size.NORMAL);
+    setVisibility(Visibility.VISIBLE);
+  }
 
   @Override
-  public String getDescription() {
-    return DESCRIPTION;
+  public String toString() {
+    return "Goblin";
   }
+
 }

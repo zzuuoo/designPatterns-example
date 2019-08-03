@@ -20,19 +20,28 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package create.abstractfactory;
+package create.builder;
 
 /**
  * 
- * OrcArmy
+ * 头发类型 枚举
  *
  */
-public class OrcArmy implements Army {
+public enum HairType {
 
-  static final String DESCRIPTION = "This is the Orc Army!";
+  /**
+   * 短发、长发、秃顶
+   */
+   SHORT("短发"), LONG("长发"),BALD("秃头");
+
+  private String title;
+
+  HairType(String title) {
+    this.title = title;
+  }
 
   @Override
-  public String getDescription() {
-    return DESCRIPTION;
+  public String toString() {
+    return title;
   }
 }

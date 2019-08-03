@@ -20,27 +20,41 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package create.abstractfactory;
+package behavior.commond;
 
 /**
  * 
- * OrcKingdomFactory concrete factory.
- * 
+ * ShrinkSpell is a concrete command
+ *
  */
-public class OrcKingdomFactory implements KingdomFactory {
+public class ShrinkSpell extends Command {
+
+  private Size oldSize;
+  private Target target;
 
   @Override
-  public Castle createCastle() {
-    return new OrcCastle();
+  public void execute(Target target) {
+    oldSize = target.getSize();
+    target.setSize(Size.SMALL);
+    this.target = target;
   }
 
   @Override
-  public King createKing() {
-    return new OrcKing();
+  public void undo() {
+    if (oldSize != null && target != null) {
+      Size temp = target.getSize();
+      target.setSize(oldSize);
+      oldSize = temp;
+    }
   }
 
   @Override
-  public Army createArmy() {
-    return new OrcArmy();
+  public void redo() {
+    undo();
+  }
+
+  @Override
+  public String toString() {
+    return "Shrink spell";
   }
 }

@@ -20,19 +20,26 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package create.abstractfactory;
+package create.builder;
 
 /**
  * 
- * ElfCastle
+ * 职业
  *
  */
-public class ElfCastle implements Castle {
+public enum Profession {
 
-  static final String DESCRIPTION = "This is the Elven castle!";
+  JAVA_ENGINEER("java工程师"), PHP_ENGINEER("php工程师"), GO_ENGINEER("go工程师");
+
+
+  private String title;
+
+  Profession(String title) {
+    this.title = title;
+  }
 
   @Override
-  public String getDescription() {
-    return DESCRIPTION;
+  public String toString() {
+    return title;
   }
 }

@@ -20,19 +20,28 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package create.abstractfactory;
+package create.builder;
 
 /**
  * 
- * OrcCastle
+ * 着装 枚举
  *
  */
-public class OrcCastle implements Castle {
+public enum Armor {
 
-  static final String DESCRIPTION = "This is the Orc castle!";
+  /**
+   * 裙子、、、、
+   */
+  DRESS("裙子"), LEATHER("皮革"), PLAID_SHIRT("格子衫"), VEST("背心");
+
+  private String title;
+
+  Armor(String title) {
+    this.title = title;
+  }
 
   @Override
-  public String getDescription() {
-    return DESCRIPTION;
+  public String toString() {
+    return title;
   }
 }

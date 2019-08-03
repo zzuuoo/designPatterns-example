@@ -19,10 +19,9 @@ public class Singleton {
 		try {
 			//懒汉式
 			if (instance != null) {
+				return instance;
 
 			} else {
-				//创建实例之前可能会有一些准备性的耗时工作
-				Thread.sleep(300);
 				synchronized (Singleton.class) {
 					//二次检查
 					if (instance == null) {
@@ -30,7 +29,7 @@ public class Singleton {
 					}
 				}
 			}
-		} catch (InterruptedException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return instance;
