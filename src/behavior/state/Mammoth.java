@@ -20,25 +20,43 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package behavior.commond;
+package behavior.state;
 
 /**
- *
- * Enumeration for target size.
- *
+ * 
+ * Mammoth has internal state that defines its behavior.
+ * 
  */
-public enum Size {
+public class Mammoth {
 
-  SMALL("small"), NORMAL("normal"), LARGE("large"), UNDEFINED("");
+  private State state;
 
-  private String title;
+  public Mammoth() {
+    state = new PeacefulState(this);
+  }
 
-  Size(String title) {
-    this.title = title;
+  /**
+   * 对着时间的推移，猛犸象的变化。
+   */
+  public void timePasses() {
+    if (state.getClass().equals(PeacefulState.class)) {
+      changeStateTo(new AngryState(this));
+    } else {
+      changeStateTo(new PeacefulState(this));
+    }
+  }
+
+  private void changeStateTo(State newState) {
+    this.state = newState;
+    this.state.onEnterState();
   }
 
   @Override
   public String toString() {
-    return title;
+    return "猛犸象 ";
+  }
+
+  public void observe() {
+    this.state.observe();
   }
 }

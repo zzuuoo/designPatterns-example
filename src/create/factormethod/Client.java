@@ -13,6 +13,7 @@ public class Client {
 		doSomething(factory);
 
 		factory = new AmericanCarFactory();
+
 		doSomething(factory);
 
 	}

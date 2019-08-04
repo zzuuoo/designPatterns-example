@@ -20,45 +20,22 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package behavior.commond;
-
-
+package behavior.state;
 
 /**
  * 
- * Base class for spell targets.
- *
+ * 状态接口.
+ * 
  */
-public abstract class Target {
-
-
-  private Size size;
-
-  private Visibility visibility;
-
-  public Size getSize() {
-    return size;
-  }
-
-  public void setSize(Size size) {
-    this.size = size;
-  }
-
-  public Visibility getVisibility() {
-    return visibility;
-  }
-
-  public void setVisibility(Visibility visibility) {
-    this.visibility = visibility;
-  }
-
-  @Override
-  public abstract String toString();
+public interface State {
+  /**
+   * 进入状态
+   */
+  void onEnterState();
 
   /**
-   * Print status
+   * 观察状态
    */
-  public void printStatus() {
-    System.out.println("size = "+getSize()+" visibility="+getVisibility());
-  }
+  void observe();
+
 }
