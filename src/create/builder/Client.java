@@ -46,7 +46,7 @@ public class Client {
 
 		Hero php =
 				new Hero.Builder(Profession.PHP_ENGINEER, "小匹").withHairType(HairType.BALD)
-						.withWeapon(Weapon.MONITOR).build();
+						.withWeapon(Weapon.MOUSE).build();
 		System.out.println(php.toString());
 
 	}
