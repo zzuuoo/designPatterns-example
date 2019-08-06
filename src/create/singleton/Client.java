@@ -8,5 +8,7 @@ public class Client {
 	public static void main(String[] args) {
 		var s = Singleton.getInstance();
 		s.doSomething();
+		var another = EnumSingleton.SINGLE;
+		another.print();
 	}
 }
