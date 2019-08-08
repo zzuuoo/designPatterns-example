@@ -1,6 +1,7 @@
 package behavior.responsibility;
 
 /**
+ * 总经理 请求终结者
  * @author zuoweixing@guazi.com
  * @date 2019-08-04 01:37
  */

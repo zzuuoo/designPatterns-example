@@ -10,18 +10,17 @@ public class Client {
 		// 现实使用 应该是运行时传进来具体的工厂
 		CarFactory factory = new ChineseCarFactory();
 
-		doSomething(factory);
+		doSomething(factory,"A");
 
 		factory = new AmericanCarFactory();
 
-		doSomething(factory);
+		doSomething(factory,"B");
 
 	}
 
-	public static void doSomething(CarFactory factory){
-		Car car = factory.makeCar("A");
+	public static void doSomething(CarFactory factory,String name){
+		Car car = factory.makeCar(name);
 		car.show();
-		car = factory.makeCar("B");
-		car.show();
+
 	}
 }
