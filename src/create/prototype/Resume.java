@@ -11,11 +11,7 @@ public class Resume implements Cloneable{
 	private WorkExperience work;
 
 	public Resume(WorkExperience workExperience){
-		try {
-			this.work = (WorkExperience) workExperience.clone();
-		} catch (CloneNotSupportedException e) {
-			e.printStackTrace();
-		}
+		this.work =workExperience;
 	}
 	public WorkExperience getWork() {
 		return work;
@@ -51,10 +47,12 @@ public class Resume implements Cloneable{
 
 	@Override
 	public Object clone() throws CloneNotSupportedException {
+		super.clone();
 		Resume resume = new Resume(this.work);
 		resume.age = this.age;
 		resume.name = this.name;
 		resume.sex = this.sex;
+		resume.work = (WorkExperience) this.work.clone();
 		return resume;
 	}
 

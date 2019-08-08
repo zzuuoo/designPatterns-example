@@ -11,19 +11,24 @@ public class Client {
 		WorkExperience workExperience = new WorkExperience();
 		workExperience.setCompany("瓜子");
 		workExperience.setWorkDate("2019-2020");
-		workExperience.show();
+
 		Resume resume = new Resume(workExperience);
 		resume.setAge("14");
 		resume.setName("呱呱");
 		resume.setSex("男");
+
 		resume.disPlay();
-		var b  = new WorkExperience();;
-		b.setCompany("毛豆");
-		b.setWorkDate("2017-2019");
-		Resume a = (Resume) resume.clone();
-		a.disPlay();
-		a.setWork(b);
-		a.disPlay();
+
+		Resume k = (Resume) resume.clone();
+		k.disPlay();;
+
+		var work = k.getWork();
+		work.setWorkDate("2011-10-10");
+		work.setCompany("毛豆");
+		k.setWork(work);
+
+		k.disPlay();
+
 		resume.disPlay();
 
 	}

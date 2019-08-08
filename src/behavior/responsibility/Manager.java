@@ -17,5 +17,6 @@ public abstract class Manager {
 	public void setSuperior(Manager superior){
 		this.superior = superior;
 	}
+
 	abstract public void Request(Request request);
 }

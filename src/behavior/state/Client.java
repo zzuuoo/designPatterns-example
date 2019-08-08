@@ -10,8 +10,10 @@ public class Client {
 
     Mammoth mammoth = new Mammoth();
     mammoth.observe();
+
     mammoth.timePasses();
     mammoth.observe();
+
     mammoth.timePasses();
     mammoth.observe();
 
