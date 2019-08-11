@@ -5,7 +5,7 @@ package struct.agent.staticproxy;
  * @date 2019-08-04 20:15
  */
 public class Proxy implements GiveGift{
-	Pursuit pursuit;
+	GiveGift pursuit;
 	public Proxy(Pursuit pursuit){
 		this.pursuit = pursuit;
 	}

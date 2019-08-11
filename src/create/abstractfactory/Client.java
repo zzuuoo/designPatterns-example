@@ -59,6 +59,7 @@ public class Client {
 
     System.out.println("瓜子王国");
     client.createKingdom(new GuaziKingdomFactory());
+
     System.out.println(client.getArmy().getDescription());
     System.out.println(client.getCastle().getDescription());
     System.out.println(client.getKing().getDescription());

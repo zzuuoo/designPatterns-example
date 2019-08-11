@@ -16,6 +16,7 @@ public class CarFactory {
 				break;
 			case "Ambulance":
 				car = new Taxi();
+				break;
 				default:
 					System.out.println("没有生产该车的权限");
 					break;

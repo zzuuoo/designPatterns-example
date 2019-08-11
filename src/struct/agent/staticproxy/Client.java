@@ -6,7 +6,7 @@ package struct.agent.staticproxy;
  */
 public class Client {
 	public static void main(String[] args) {
-		Proxy proxy = new Proxy(new Pursuit("小芳"));
+		GiveGift proxy = new Proxy(new Pursuit("小芳"));
 		proxy.giveChocolate();
 		proxy.giveDolls();
 		proxy.giveFlowers();

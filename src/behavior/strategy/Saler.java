@@ -7,12 +7,14 @@ package behavior.strategy;
  */
 public class Saler {
 	private SaleCarStrategy strategy;
+
 	public Saler(SaleCarStrategy saleCarStrategy){
 		this.strategy = saleCarStrategy;
 	}
 	public void changeStrategy(SaleCarStrategy saleCarStrategy){
 		this.strategy = saleCarStrategy;
 	}
+
 	public void sale(){
 		this.strategy.sale();
 	}
